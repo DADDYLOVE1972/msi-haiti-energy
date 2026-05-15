@@ -1,0 +1,171 @@
+import { ArrowRight, CheckCircle2, HeartHandshake, ShieldCheck, SunMedium } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import HaitiSolarMap from '../components/HaitiSolarMap.jsx';
+import SectionHeader from '../components/SectionHeader.jsx';
+import SolarVisual from '../components/SolarVisual.jsx';
+import StatGrid from '../components/StatGrid.jsx';
+import { impactPillars, impactStats, marigotStats, metrics, partnerTracks } from '../data/site.js';
+
+export default function Home() {
+  return (
+    <>
+      <section className="hero-full relative isolate min-h-[760px] overflow-hidden bg-ink text-white">
+        <img
+          src="/assets/haiti-solar-hero.png"
+          alt="Solar panels powering a hillside community in coastal Haiti"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/78 to-ocean-900/28" aria-hidden="true" />
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-ink to-transparent" aria-hidden="true" />
+        <div className="container-page relative flex min-h-[760px] flex-col justify-center py-20">
+          <div className="max-w-4xl reveal">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-leaf-100 backdrop-blur">
+              <SunMedium className="h-4 w-4" aria-hidden="true" />
+              Marigot Phase 1: 100 homes
+            </div>
+            <h1 className="mt-8 max-w-5xl text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
+              Clean energy that lets Haitian families plan beyond sunset.
+            </h1>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-100 sm:text-xl">
+              MSI Haiti Energy is building an investor-ready pathway to reliable solar power in Marigot,
+              combining community dignity, technical discipline, and measurable impact.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link to="/marigot-project" className="btn-primary">
+                View Marigot Project <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+              <Link to="/partner" className="inline-flex items-center justify-center gap-2 rounded-md border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20">
+                Partner With Us
+              </Link>
+            </div>
+          </div>
+          <div className="mt-14 max-w-6xl reveal reveal-delay-2">
+            <StatGrid items={metrics} />
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider bg-ink pb-20 text-white">
+        <div className="container-page">
+          <div className="grid gap-5 md:grid-cols-3">
+            {[
+              ['Mission', 'Electrify homes with reliable clean power.'],
+              ['Model', 'Phase-based deployment with transparent milestones.'],
+              ['Momentum', 'Start in Marigot, then prepare to replicate.'],
+            ].map(([title, text]) => (
+              <div key={title} className="rounded-lg border border-white/10 bg-white/10 p-6 backdrop-blur reveal">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-leaf-100">{title}</p>
+                <p className="mt-3 text-lg font-semibold leading-7 text-white">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container-page page-pad">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="reveal">
+            <SectionHeader
+              eyebrow="Marigot Phase 1"
+              title="A serious first deployment for 100 homes."
+              text="Phase 1 is designed to prove the model through a measurable community electrification project with the credibility partners expect."
+            />
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {marigotStats.map((item) => (
+                <div key={item.label} className="card">
+                  <item.icon className="h-7 w-7 text-leaf-600" aria-hidden="true" />
+                  <p className="mt-4 text-2xl font-semibold text-ocean-700">{item.value}</p>
+                  <h3 className="mt-2 font-semibold text-ink">{item.label}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="reveal reveal-delay-1">
+            <SolarVisual />
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider bg-slate-50 py-20 sm:py-24">
+        <div className="container-page">
+          <SectionHeader
+            eyebrow="Impact at a glance"
+            title="Human outcomes, measured with investor discipline."
+            text="The site now foregrounds the emotional promise of energy access while keeping the numbers and execution logic clear."
+            centered
+          />
+          <div className="mt-12">
+            <StatGrid items={impactStats} />
+          </div>
+        </div>
+      </section>
+
+      <section className="container-page page-pad">
+        <HaitiSolarMap />
+      </section>
+
+      <section className="section-divider bg-ocean-900 py-20 text-white sm:py-24">
+        <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1fr] lg:items-center">
+          <div className="reveal">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-leaf-100">Why it matters</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-5xl">Electricity is infrastructure for dignity.</h2>
+            <p className="mt-5 text-base leading-8 text-slate-200">
+              Reliable power supports education, refrigeration, communications, small businesses,
+              health, public safety, and resilience during disruption.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {impactPillars.map((item, index) => (
+              <div key={item.title} className={`rounded-lg border border-white/10 bg-white/10 p-6 backdrop-blur reveal reveal-delay-${Math.min(index + 1, 3)}`}>
+                <item.icon className="h-7 w-7 text-leaf-100" aria-hidden="true" />
+                <h3 className="mt-4 font-semibold">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-200">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container-page page-pad">
+        <SectionHeader
+          eyebrow="Partner pathways"
+          title="Built for NGOs, investors, technology partners, and supporters."
+          text="MSI Haiti Energy welcomes aligned partners who can help deploy, finance, monitor, and scale clean-energy access."
+          centered
+        />
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {partnerTracks.map((track) => (
+            <div key={track.title} className="card">
+              <track.icon className="h-8 w-8 text-ocean-700" aria-hidden="true" />
+              <h3 className="mt-5 text-xl font-semibold text-ink">{track.title}</h3>
+              <p className="mt-3 leading-7 text-slate-600">{track.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-page pb-20">
+        <div className="rounded-lg bg-gradient-to-r from-ocean-700 to-leaf-600 p-8 text-white shadow-soft sm:p-10 lg:p-12">
+          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <HeartHandshake className="h-9 w-9 text-leaf-100" aria-hidden="true" />
+              <h2 className="mt-4 text-3xl font-semibold">Ready to help electrify Marigot?</h2>
+              <p className="mt-4 max-w-2xl leading-7 text-white/90">
+                Connect with MSI Haiti Energy to explore funding, technical collaboration, implementation support,
+                or institutional partnership.
+              </p>
+              <div className="mt-5 flex items-center gap-3 text-sm font-semibold text-leaf-100">
+                <ShieldCheck className="h-5 w-5" aria-hidden="true" />
+                Structured for transparent partner conversations
+              </div>
+            </div>
+            <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-ocean-700 transition hover:-translate-y-0.5">
+              Start a Conversation <CheckCircle2 size={18} aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
