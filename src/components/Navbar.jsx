@@ -23,8 +23,8 @@ export default function Navbar() {
             </NavLink>
           ))}
         </div>
-        <Link to="/partner" className="btn-primary hidden xl:inline-flex">
-          Partner <ArrowRight size={17} aria-hidden="true" />
+        <Link to="/partner" className="btn-primary hidden shadow-soft xl:inline-flex">
+          Partner With MSI <ArrowRight size={17} aria-hidden="true" />
         </Link>
         <button
           type="button"

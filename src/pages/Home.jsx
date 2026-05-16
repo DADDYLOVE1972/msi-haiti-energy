@@ -1,10 +1,10 @@
-import { ArrowRight, CheckCircle2, HeartHandshake, ShieldCheck, SunMedium } from 'lucide-react';
+import { ArrowRight, HeartHandshake, ShieldCheck, SunMedium } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import HaitiSolarMap from '../components/HaitiSolarMap.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
 import SolarVisual from '../components/SolarVisual.jsx';
 import StatGrid from '../components/StatGrid.jsx';
-import { impactPillars, impactStats, marigotStats, metrics, partnerTracks } from '../data/site.js';
+import { impactPillars, impactStats, marigotStats, metrics, partnerTracks, phaseOverviewCards } from '../data/site.js';
 
 export default function Home() {
   return (
@@ -26,17 +26,25 @@ export default function Home() {
             <h1 className="mt-8 max-w-5xl text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
               Clean energy that lets Haitian families plan beyond sunset.
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-100 sm:text-xl">
+            <p className="mt-5 max-w-2xl text-xl font-semibold leading-8 text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)] sm:text-2xl sm:leading-9">
+              Reliable electricity for homes, schools, clinics, and local businesses in Marigot, Haiti.
+            </p>
+            <p className="mt-7 max-w-2xl text-lg font-medium leading-8 text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.42)] sm:text-xl sm:leading-9 lg:text-slate-100">
               MSI Haiti Energy is building an investor-ready pathway to reliable solar power in Marigot,
               combining community dignity, technical discipline, and measurable impact.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link to="/marigot-project" className="btn-primary">
-                View Marigot Project <ArrowRight size={18} aria-hidden="true" />
+              <Link to="/contact" className="btn-primary w-full sm:w-auto">
+                Request Project Brief <ArrowRight size={18} aria-hidden="true" />
               </Link>
-              <Link to="/partner" className="inline-flex items-center justify-center gap-2 rounded-md border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20">
-                Partner With Us
+              <Link to="/contact" className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20 sm:w-auto">
+                Schedule a Conversation <ArrowRight size={18} aria-hidden="true" />
               </Link>
+            </div>
+            <div className="mt-6 flex max-w-2xl items-start gap-3 rounded-lg border border-white/15 bg-white/10 p-4 text-sm leading-6 text-slate-100 backdrop-blur">
+              <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-leaf-100" aria-hidden="true" />
+              Project brief, partnership pathways, and Phase 1 funding details are available for aligned investors,
+              NGOs, foundations, and technical partners.
             </div>
           </div>
           <div className="mt-14 max-w-6xl reveal reveal-delay-2">
@@ -49,13 +57,35 @@ export default function Home() {
         <div className="container-page">
           <div className="grid gap-5 md:grid-cols-3">
             {[
-              ['Mission', 'Electrify homes with reliable clean power.'],
-              ['Model', 'Phase-based deployment with transparent milestones.'],
-              ['Momentum', 'Start in Marigot, then prepare to replicate.'],
+              ['Investor Readiness', 'Clear Phase 1 scope, impact metrics, and partner reporting orientation.'],
+              ['NGO Alignment', 'Community-first implementation designed for trusted institutional collaboration.'],
+              ['Project Brief', 'Marigot deployment details available for qualified partners and supporters.'],
             ].map(([title, text]) => (
               <div key={title} className="rounded-lg border border-white/10 bg-white/10 p-6 backdrop-blur reveal">
                 <p className="text-sm font-semibold uppercase tracking-[0.16em] text-leaf-100">{title}</p>
                 <p className="mt-3 text-lg font-semibold leading-7 text-white">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider bg-white py-20 sm:py-24">
+        <div className="container-page">
+          <SectionHeader
+            eyebrow="Trust and delivery"
+            title="MSI Haiti Energy — Phase 1 Overview"
+            text="A focused, partner-ready clean-energy deployment built around transparent funding, community benefit, and a model that can scale."
+            centered
+          />
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {phaseOverviewCards.map((card, index) => (
+              <div key={card.title} className={`card reveal reveal-delay-${Math.min(index, 3)}`}>
+                <span className="flex h-12 w-12 items-center justify-center rounded-md bg-leaf-50 text-leaf-700">
+                  <card.icon size={24} aria-hidden="true" />
+                </span>
+                <h3 className="mt-5 text-lg font-semibold leading-7 text-ink">{card.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{card.text}</p>
               </div>
             ))}
           </div>
@@ -150,18 +180,24 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <HeartHandshake className="h-9 w-9 text-leaf-100" aria-hidden="true" />
-              <h2 className="mt-4 text-3xl font-semibold">Ready to help electrify Marigot?</h2>
+              <h2 className="mt-4 text-3xl font-semibold">Help bring reliable electricity to Marigot, Haiti</h2>
               <p className="mt-4 max-w-2xl leading-7 text-white/90">
-                Connect with MSI Haiti Energy to explore funding, technical collaboration, implementation support,
-                or institutional partnership.
+                Partner with MSI Haiti Energy to support scalable clean-energy infrastructure, community resilience,
+                and measurable impact.
               </p>
               <div className="mt-5 flex items-center gap-3 text-sm font-semibold text-leaf-100">
                 <ShieldCheck className="h-5 w-5" aria-hidden="true" />
                 Structured for transparent partner conversations
               </div>
+              <a
+                className="mt-3 inline-flex text-sm font-semibold text-white underline decoration-white/35 underline-offset-4 transition hover:decoration-white"
+                href="mailto:marigotsolarinitiative@gmail.com"
+              >
+                marigotsolarinitiative@gmail.com
+              </a>
             </div>
-            <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-ocean-700 transition hover:-translate-y-0.5">
-              Start a Conversation <CheckCircle2 size={18} aria-hidden="true" />
+            <Link to="/contact" className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-ocean-700 transition hover:-translate-y-0.5 sm:w-auto">
+              Schedule a Conversation <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>
         </div>

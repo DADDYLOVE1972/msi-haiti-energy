@@ -13,11 +13,11 @@ export default function Footer() {
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-leaf-100">Build with us</p>
               <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
-                Help turn reliable clean power into a daily reality for Marigot families.
+                Help turn reliable clean power into reality for Marigot families.
               </h2>
             </div>
-            <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-ocean-700 transition hover:-translate-y-0.5">
-              Contact MSI <ArrowRight size={17} aria-hidden="true" />
+            <Link to="/partner" className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-ocean-700 transition hover:-translate-y-0.5 sm:w-auto">
+              Partner With MSI <ArrowRight size={17} aria-hidden="true" />
             </Link>
           </div>
         </div>
@@ -43,10 +43,10 @@ export default function Footer() {
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-leaf-100">Contact</h2>
             <div className="mt-4 space-y-4 text-sm text-slate-300">
-              <p className="flex items-start gap-3">
+              <a className="flex items-start gap-3 transition hover:text-white" href="mailto:marigotsolarinitiative@gmail.com">
                 <Mail className="mt-0.5 h-4 w-4 text-leaf-100" aria-hidden="true" />
-                info@msihaitienergy.org
-              </p>
+                marigotsolarinitiative@gmail.com
+              </a>
               <p className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 text-leaf-100" aria-hidden="true" />
                 Marigot, Southeast Haiti

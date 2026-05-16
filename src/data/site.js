@@ -45,6 +45,34 @@ export const impactStats = [
   { icon: Globe2, value: 'Phase 1', label: 'Launch', text: 'A disciplined proof point built for partner confidence and scale.' },
 ];
 
+export const phaseOverviewCards = [
+  {
+    icon: Home,
+    title: '100 Homes Targeted',
+    text: 'Community electrification for Marigot Phase 1',
+  },
+  {
+    icon: MapPin,
+    title: 'Marigot, Haiti',
+    text: 'Focused pilot deployment zone',
+  },
+  {
+    icon: Sun,
+    title: 'Community Solar Infrastructure',
+    text: 'Reliable power for homes and small businesses',
+  },
+  {
+    icon: Handshake,
+    title: 'NGO + Investor Partnerships',
+    text: 'Built for collaboration and transparent funding',
+  },
+  {
+    icon: Globe2,
+    title: 'Scalable Model',
+    text: 'Designed for future expansion beyond Phase 1',
+  },
+];
+
 export const marigotStats = [
   { icon: Home, label: 'Homes', value: '100', detail: 'Initial household connections in Phase 1.' },
   { icon: Sun, label: 'Technology', value: 'Solar + storage', detail: 'Resilient clean-energy systems sized for community needs.' },
@@ -100,7 +128,7 @@ export const roadmap = [
 ];
 
 export const contactDetails = [
-  { icon: Mail, label: 'Email', value: 'info@msihaitienergy.org' },
+  { icon: Mail, label: 'Email', value: 'marigotsolarinitiative@gmail.com', href: 'mailto:marigotsolarinitiative@gmail.com' },
   { icon: Phone, label: 'Phone', value: '+1 (000) 000-0000' },
   { icon: MapPin, label: 'Focus Area', value: 'Marigot, Southeast Haiti' },
 ];
