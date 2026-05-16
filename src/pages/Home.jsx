@@ -19,9 +19,15 @@ export default function Home() {
         <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-ink to-transparent" aria-hidden="true" />
         <div className="container-page relative flex min-h-[760px] flex-col justify-center py-20">
           <div className="max-w-4xl reveal">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-leaf-100 backdrop-blur">
-              <SunMedium className="h-4 w-4" aria-hidden="true" />
-              Marigot Phase 1: 100 homes
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-leaf-100 backdrop-blur">
+                <SunMedium className="h-4 w-4" aria-hidden="true" />
+                Marigot Phase 1: 100 homes
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-leaf-100/30 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur">
+                <span aria-hidden="true">🟢</span>
+                Phase 1 Planning — Marigot, Haiti
+              </div>
             </div>
             <h1 className="mt-8 max-w-5xl text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
               Reliable solar power for homes, schools, and local businesses in Marigot, Haiti.
@@ -33,10 +39,10 @@ export default function Home() {
               Reliable electricity for homes, schools, clinics, and local businesses in Marigot, Haiti.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link to="/contact" className="btn-primary w-full sm:w-auto">
+              <Link to="/contact" className="btn-primary min-h-14 w-full px-6 py-4 text-base hover:scale-[1.01] sm:w-auto">
                 Request Project Brief <ArrowRight size={18} aria-hidden="true" />
               </Link>
-              <Link to="/contact" className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20 sm:w-auto">
+              <Link to="/contact" className="inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-md border border-white/30 bg-white/10 px-6 py-4 text-base font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/20 hover:shadow-lift sm:w-auto">
                 Schedule a Conversation <ArrowRight size={18} aria-hidden="true" />
               </Link>
             </div>
@@ -196,10 +202,10 @@ export default function Home() {
               </a>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-              <Link to="/contact" className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-ocean-700 transition hover:-translate-y-0.5 sm:w-auto">
+              <Link to="/contact" className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-ocean-700 transition hover:-translate-y-0.5 sm:w-auto">
                 Start a Conversation <ArrowRight size={18} aria-hidden="true" />
               </Link>
-              <Link to="/contact" className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/35 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20 sm:w-auto">
+              <Link to="/contact" className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md border border-white/35 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20 sm:w-auto">
                 Download Project Brief <ArrowRight size={18} aria-hidden="true" />
               </Link>
             </div>
