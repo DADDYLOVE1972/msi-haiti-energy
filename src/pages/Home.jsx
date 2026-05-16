@@ -24,14 +24,13 @@ export default function Home() {
               Marigot Phase 1: 100 homes
             </div>
             <h1 className="mt-8 max-w-5xl text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
-              Clean energy that lets Haitian families plan beyond sunset.
+              Reliable solar power for homes, schools, and local businesses in Marigot, Haiti.
             </h1>
-            <p className="mt-5 max-w-2xl text-xl font-semibold leading-8 text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)] sm:text-2xl sm:leading-9">
-              Reliable electricity for homes, schools, clinics, and local businesses in Marigot, Haiti.
-            </p>
             <p className="mt-7 max-w-2xl text-lg font-medium leading-8 text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.42)] sm:text-xl sm:leading-9 lg:text-slate-100">
-              MSI Haiti Energy is building an investor-ready pathway to reliable solar power in Marigot,
-              combining community dignity, technical discipline, and measurable impact.
+              MSI Haiti Energy is building an investor-ready clean energy initiative beginning with 100 homes in Marigot, Haiti.
+            </p>
+            <p className="mt-4 max-w-2xl text-base font-semibold leading-7 text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)] sm:text-lg sm:leading-8">
+              Reliable electricity for homes, schools, clinics, and local businesses in Marigot, Haiti.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link to="/contact" className="btn-primary w-full sm:w-auto">
@@ -196,9 +195,14 @@ export default function Home() {
                 marigotsolarinitiative@gmail.com
               </a>
             </div>
-            <Link to="/contact" className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-ocean-700 transition hover:-translate-y-0.5 sm:w-auto">
-              Schedule a Conversation <ArrowRight size={18} aria-hidden="true" />
-            </Link>
+            <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+              <Link to="/contact" className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-ocean-700 transition hover:-translate-y-0.5 sm:w-auto">
+                Start a Conversation <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+              <Link to="/contact" className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/35 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20 sm:w-auto">
+                Download Project Brief <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

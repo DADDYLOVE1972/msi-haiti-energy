@@ -25,16 +25,16 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.35fr_0.8fr_0.8fr_1fr]">
           <div>
             <Logo inverse />
-            <p className="mt-5 max-w-xl text-sm leading-7 text-slate-300">
+            <p className="mt-5 max-w-xl text-base leading-8 text-slate-300">
               MSI Haiti Energy develops clean, resilient energy access projects for Haitian communities,
               beginning with Marigot Phase 1 and a goal of electrifying 100 homes.
             </p>
           </div>
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-leaf-100">Explore</h2>
-            <div className="mt-4 grid gap-3">
+            <div className="mt-5 grid gap-3.5">
               {navLinks.map((link) => (
-                <Link key={link.href} to={link.href} className="text-sm text-slate-300 transition hover:text-white">
+                <Link key={link.href} to={link.href} className="text-base text-slate-300 transition hover:text-white">
                   {link.label}
                 </Link>
               ))}
@@ -42,13 +42,13 @@ export default function Footer() {
           </div>
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-leaf-100">Contact</h2>
-            <div className="mt-4 space-y-4 text-sm text-slate-300">
-              <a className="flex items-start gap-3 transition hover:text-white" href="mailto:marigotsolarinitiative@gmail.com">
-                <Mail className="mt-0.5 h-4 w-4 text-leaf-100" aria-hidden="true" />
-                marigotsolarinitiative@gmail.com
+            <div className="mt-5 space-y-5 text-base text-slate-300">
+              <a className="flex items-start gap-3 break-words transition hover:text-white" href="mailto:marigotsolarinitiative@gmail.com">
+                <Mail className="mt-1 h-4 w-4 shrink-0 text-leaf-100" aria-hidden="true" />
+                <span>marigotsolarinitiative@gmail.com</span>
               </a>
               <p className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 text-leaf-100" aria-hidden="true" />
+                <MapPin className="mt-1 h-4 w-4 shrink-0 text-leaf-100" aria-hidden="true" />
                 Marigot, Southeast Haiti
               </p>
             </div>
@@ -57,7 +57,7 @@ export default function Footer() {
             <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-leaf-100">Focus</h2>
             <div className="mt-4 grid gap-3">
               {footerHighlights.map((item) => (
-                <p key={item} className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-300">
+                <p key={item} className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm leading-6 text-slate-300">
                   {item}
                 </p>
               ))}

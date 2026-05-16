@@ -69,7 +69,7 @@ export const phaseOverviewCards = [
   {
     icon: Globe2,
     title: 'Scalable Model',
-    text: 'Designed for future expansion beyond Phase 1',
+    text: 'Designed for expansion beyond Phase 1',
   },
 ];
 
