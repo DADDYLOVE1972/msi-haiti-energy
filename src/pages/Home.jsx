@@ -25,7 +25,7 @@ export default function Home() {
                 Marigot Phase 1: 100 homes
               </div>
               <div className="inline-flex items-center gap-2 rounded-full border border-leaf-100/30 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur">
-                <span aria-hidden="true">🟢</span>
+                <span className="h-2.5 w-2.5 rounded-full bg-leaf-500 shadow-[0_0_18px_rgba(36,179,107,0.75)]" aria-hidden="true" />
                 Phase 1 Planning — Marigot, Haiti
               </div>
             </div>
@@ -40,10 +40,10 @@ export default function Home() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link to="/contact" className="btn-primary min-h-14 w-full px-6 py-4 text-base hover:scale-[1.01] sm:w-auto">
-                Request Project Brief <ArrowRight size={18} aria-hidden="true" />
+                Download Project Brief <ArrowRight size={18} aria-hidden="true" />
               </Link>
               <Link to="/contact" className="inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-md border border-white/30 bg-white/10 px-6 py-4 text-base font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/20 hover:shadow-lift sm:w-auto">
-                Schedule a Conversation <ArrowRight size={18} aria-hidden="true" />
+                Schedule a Call <ArrowRight size={18} aria-hidden="true" />
               </Link>
             </div>
             <div className="mt-6 flex max-w-2xl items-start gap-3 rounded-lg border border-white/15 bg-white/10 p-4 text-sm leading-6 text-slate-100 backdrop-blur">
@@ -60,37 +60,15 @@ export default function Home() {
 
       <section className="section-divider bg-ink pb-20 text-white">
         <div className="container-page">
-          <div className="grid gap-5 md:grid-cols-3">
-            {[
-              ['Investor Readiness', 'Clear Phase 1 scope, impact metrics, and partner reporting orientation.'],
-              ['NGO Alignment', 'Community-first implementation designed for trusted institutional collaboration.'],
-              ['Project Brief', 'Marigot deployment details available for qualified partners and supporters.'],
-            ].map(([title, text]) => (
-              <div key={title} className="rounded-lg border border-white/10 bg-white/10 p-6 backdrop-blur reveal">
-                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-leaf-100">{title}</p>
-                <p className="mt-3 text-lg font-semibold leading-7 text-white">{text}</p>
-              </div>
-            ))}
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-leaf-100">MSI Haiti Energy — Phase 1 Overview</p>
           </div>
-        </div>
-      </section>
-
-      <section className="section-divider bg-white py-20 sm:py-24">
-        <div className="container-page">
-          <SectionHeader
-            eyebrow="Trust and delivery"
-            title="MSI Haiti Energy — Phase 1 Overview"
-            text="A focused, partner-ready clean-energy deployment built around transparent funding, community benefit, and a model that can scale."
-            centered
-          />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {phaseOverviewCards.map((card, index) => (
-              <div key={card.title} className={`card reveal reveal-delay-${Math.min(index, 3)}`}>
-                <span className="flex h-12 w-12 items-center justify-center rounded-md bg-leaf-50 text-leaf-700">
-                  <card.icon size={24} aria-hidden="true" />
-                </span>
-                <h3 className="mt-5 text-lg font-semibold leading-7 text-ink">{card.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{card.text}</p>
+              <div key={card.title} className={`rounded-lg border border-white/10 bg-white/10 p-5 backdrop-blur transition duration-300 hover:-translate-y-1 hover:bg-white/15 reveal reveal-delay-${Math.min(index, 3)}`}>
+                <card.icon className="h-6 w-6 text-leaf-100" aria-hidden="true" />
+                <p className="mt-4 text-base font-semibold leading-6 text-white">{card.title}</p>
+                <p className="mt-2 text-sm leading-6 text-slate-300">{card.text}</p>
               </div>
             ))}
           </div>

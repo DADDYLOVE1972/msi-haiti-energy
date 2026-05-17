@@ -51,7 +51,7 @@ export default function Contact() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Start a conversation with MSI Haiti Energy."
+        title="Partner With Us"
         text="Reach out to discuss Marigot Phase 1, project brief requests, donor engagement, NGO partnerships, or technical collaboration."
       />
       <section className="container-page page-pad">
@@ -87,7 +87,7 @@ export default function Contact() {
                 />
               </label>
               <label className="grid gap-2 text-sm font-semibold text-slate-700">
-                <span>Organization <span className="font-medium text-slate-400">(optional)</span></span>
+                <span>Organization Name</span>
                 <input
                   className={inputClass}
                   type="text"
@@ -101,19 +101,21 @@ export default function Contact() {
 
             <div className="mt-5 grid gap-5 sm:grid-cols-2">
               <label className="grid gap-2 text-sm font-semibold text-slate-700">
-                <span>Email Address</span>
+                <span>Email</span>
                 <input
                   className={inputClass}
-                  type="email"
+                  type="text"
+                  inputMode="email"
                   name="email"
                   placeholder="you@example.com"
                   value={formState.email}
                   onChange={updateField}
+                  pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
                   required
                 />
               </label>
               <label className="grid gap-2 text-sm font-semibold text-slate-700">
-                <span>Phone Number <span className="font-medium text-slate-400">(optional)</span></span>
+                <span>Phone Number</span>
                 <input
                   className={inputClass}
                   type="tel"
@@ -126,15 +128,15 @@ export default function Contact() {
             </div>
 
             <label className="mt-5 grid gap-2 text-sm font-semibold text-slate-700">
-              <span>Type of Inquiry</span>
+              <span>Organization Type</span>
               <select className={inputClass} name="inquiryType" value={formState.inquiryType} onChange={updateField} required>
-                <option value="" disabled>Select an inquiry type</option>
+                <option value="" disabled>Select organization type</option>
                 <option>Investor</option>
-                <option>NGO Partnership</option>
-                <option>Donor</option>
-                <option>Technology Partner</option>
+                <option>NGO</option>
                 <option>Government</option>
-                <option>General Inquiry</option>
+                <option>Technology Partner</option>
+                <option>Donor</option>
+                <option>Other</option>
               </select>
             </label>
 

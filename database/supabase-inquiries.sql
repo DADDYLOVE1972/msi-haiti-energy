@@ -7,11 +7,11 @@ create table if not exists public.inquiries (
   inquiry_type text not null check (
     inquiry_type in (
       'Investor',
-      'NGO Partnership',
-      'Donor',
-      'Technology Partner',
+      'NGO',
       'Government',
-      'General Inquiry'
+      'Technology Partner',
+      'Donor',
+      'Other'
     )
   ),
   message text not null,

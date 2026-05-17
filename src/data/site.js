@@ -63,12 +63,12 @@ export const phaseOverviewCards = [
   },
   {
     icon: Handshake,
-    title: 'NGO + Investor Partnerships',
+    title: 'Investor-Ready Model',
     text: 'Built for collaboration and transparent funding',
   },
   {
     icon: Globe2,
-    title: 'Scalable Model',
+    title: 'Scalable Deployment',
     text: 'Designed for expansion beyond Phase 1',
   },
 ];
