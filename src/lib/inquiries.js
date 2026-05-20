@@ -1,6 +1,8 @@
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
-const INQUIRIES_TABLE = import.meta.env.VITE_SUPABASE_INQUIRIES_TABLE || 'inquiries';
+const INQUIRIES_TABLE =
+  import.meta.env.VITE_SUPABASE_INQUIRIES_TABLE || 'partner_inquiries';
+
 const LOCAL_STORAGE_KEY = 'msi_haiti_energy_inquiries';
 
 export async function submitInquiry(inquiry) {
@@ -25,7 +27,9 @@ export async function submitInquiry(inquiry) {
   });
 
   if (!response.ok) {
-    throw new Error('Inquiry could not be saved. Please try again or email MSI Haiti Energy directly.');
+    const errorText = await response.text();
+    console.error('Supabase error:', errorText);
+    throw new Error(`Supabase error: ${errorText}`);
   }
 
   return { mode: 'supabase' };
@@ -33,13 +37,12 @@ export async function submitInquiry(inquiry) {
 
 function createInquiryPayload(inquiry) {
   return {
-    name: inquiry.fullName,
+    full_name: inquiry.fullName,
     organization: inquiry.organization || null,
     email: inquiry.email,
     phone: inquiry.phone || null,
-    inquiry_type: inquiry.inquiryType,
     message: inquiry.message,
-    submitted_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
   };
 }
 
@@ -48,6 +51,12 @@ function saveInquiryLocally(payload) {
     return;
   }
 
-  const existing = JSON.parse(window.localStorage.getItem(LOCAL_STORAGE_KEY) || '[]');
-  window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify([...existing, payload]));
+  const existing = JSON.parse(
+    window.localStorage.getItem(LOCAL_STORAGE_KEY) || '[]'
+  );
+
+  window.localStorage.setItem(
+    LOCAL_STORAGE_KEY,
+    JSON.stringify([...existing, payload])
+  );
 }
